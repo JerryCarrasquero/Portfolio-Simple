@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Geist Pixel';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./GeistPixel-Regular-VariableFont_ELSH.ttf) format('truetype-variations');
+}
+
+@font-face {
+  font-family: 'Geist Pixel';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./GeistPixel-Regular-VariableFont_ELSH.ttf) format('truetype-variations');
+}

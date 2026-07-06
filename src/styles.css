@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import './theme.css';
+@import './asset/fonts/roboto.css';
+@import './asset/fonts/geist-pixel.css';
+@import './app/core/layout/typography.css';
+
+:root {
+	--color-primary: var(--mat-sys-primary);
+	--color-secondary: var(--mat-sys-secondary);
+	--color-tertiary: var(--mat-sys-tertiary);
+	--color-error: var(--mat-sys-tertiary);
+	--color-neutral: var(--mat-sys-outline);
+	--color-neutral-variant: var(--mat-sys-outline-variant);
+
+	--color-surface-900: var(--mat-sys-background);
+	--color-surface-800: var(--mat-sys-surface-container-low);
+	--color-surface-700: var(--mat-sys-surface-container-lowest);
+	--color-on-dark: var(--mat-sys-on-background);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	min-height: 100%;
+	font-family: var(--mat-sys-plain-font-family), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: var(--mat-sys-background);
+	color: var(--mat-sys-on-background);
+}

@@ -1,0 +1,26 @@
+.section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.skills {
+  background: linear-gradient(180deg, var(--color-surface-900) 0%, var(--color-surface-800) 100%);
+  color: var(--color-on-dark);
+}
+
+.content {
+  max-width: 760px;
+  text-align: center;
+}
+
+.label {
+  color: var(--color-tertiary);
+}
+
+.text {
+  color: color-mix(in srgb, var(--color-secondary) 82%, white 18%);
+}

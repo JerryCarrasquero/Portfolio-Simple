@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  height: 100dvh;
+}
+
+.landing-page {
+  display: block;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.landing-page.is-portfolio-revealed {
+  scroll-snap-type: y mandatory;
+}
