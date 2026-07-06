@@ -7,7 +7,7 @@
 }
 
 .type-hero-title {
-  font-family: 'Geist Pixel', 'Geist Mono', 'Courier New', monospace;
+  font-family: 'Geist Pixel', 'Courier New', monospace;
   margin: 0;
   font-size: clamp(2rem, 6vw, 4rem);
   line-height: 1.05;
@@ -35,6 +35,6 @@
 }
 
 .type-pixel {
-  font-family: 'Geist Pixel', 'Geist Mono', 'Courier New', monospace;
+  font-family: 'Geist Pixel', 'Courier New', monospace;
   letter-spacing: 0.03em;
 }
