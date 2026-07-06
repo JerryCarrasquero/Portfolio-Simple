@@ -1,0 +1,24 @@
+<section
+  id="greetings"
+  class="section snap-section greetings"
+  [class.is-portfolio-revealed]="isPortfolioRevealed"
+>
+  <span class="space-layer layer-a" aria-hidden="true"></span>
+  <span class="space-layer layer-b" aria-hidden="true"></span>
+  <span class="space-layer layer-c" aria-hidden="true"></span>
+
+  <div class="content" [class.is-text-visible]="isTextVisible">
+    <app-typewriter
+      class="typewriter-host"
+      text="Hello world! Im Jerry"
+      [speed]="70"
+      [showCursor]="true"
+      className="typewriter type-hero-title"
+      (completed)="handleTypewriterCompleted()"
+    />
+    <p class="subtitle type-subtitle reveal-item">Front-End <span class="highlight type-pixel">&lt;Web&gt;</span> Developer</p>
+    <button mat-stroked-button type="button" class="go-to-portfolio reveal-item" (click)="requestPortfolio()">
+      Go to portfolio
+    </button>
+  </div>
+</section>
