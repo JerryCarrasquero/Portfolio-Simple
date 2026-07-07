@@ -19,7 +19,7 @@ interface StackGroup {
   styleUrl: './skills-section.component.css',
 })
 export class SkillsSectionComponent {
-  private readonly stackLogoBasePath = '/asset/stack_logo';
+  private readonly stackLogoBasePath = 'asset/stack_logo';
 
   private stackLogo(fileName: string): string {
     return `${this.stackLogoBasePath}/${fileName}`;

@@ -274,6 +274,7 @@ html {
   /* Portfolio component tokens */
   --skills-section-glow-left: rgba(47, 130, 172, 0.2);
   --skills-section-glow-right: rgba(64, 173, 132, 0.2);
+  --greetings-background-image: url('./asset/background-image.jpg');
 
   --stack-bar-title-inner-stroke: rgba(255, 255, 255, 0.04);
   --stack-bar-title-outer-stroke: rgba(0, 0, 0, 0.2);
