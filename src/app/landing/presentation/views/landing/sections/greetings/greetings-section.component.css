@@ -10,7 +10,7 @@
 .greetings {
   background-image:
     linear-gradient(to bottom, rgb(8 13 31 / 28%), rgb(8 13 31 / 74%)),
-    url('/asset/background-image.jpg');
+    var(--greetings-background-image);
   background-position: center;
   background-size: cover;
   color: var(--color-on-dark);
