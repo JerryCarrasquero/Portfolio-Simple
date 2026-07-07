@@ -1,16 +1,17 @@
 <main
   #landingContainer
   class="landing-page"
-  [class.is-portfolio-revealed]="isPortfolioRevealed"
+  [class.is-portfolio-revealed]="hasPortfolioBeenRevealed"
   (wheel)="revealPortfolio()"
   (mousedown)="revealPortfolio()"
+  (scroll)="handleScroll()"
 >
   <app-greetings-section
-    [isPortfolioRevealed]="isPortfolioRevealed"
+    [isPortfolioRevealed]="isHeroCompact"
     (goToPortfolioRequested)="goToPortfolio()"
   />
 
-  @if (isPortfolioRevealed) {
+  @if (hasPortfolioBeenRevealed) {
     <app-about-me-section />
     <app-skills-section />
     <app-projects-section />

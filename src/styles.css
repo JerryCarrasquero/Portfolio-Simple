@@ -15,6 +15,37 @@
 	--color-surface-800: var(--mat-sys-surface-container-low);
 	--color-surface-700: var(--mat-sys-surface-container-lowest);
 	--color-on-dark: var(--mat-sys-on-background);
+
+	--stack-bar-title-text-dark: color-mix(in srgb, var(--mat-sys-neutral10) 88%, black 12%);
+	--stack-bar-title-text-light: color-mix(in srgb, white 92%, var(--mat-sys-on-background) 8%);
+
+	--stack-bar-amber-start: #ffcc60;
+	--stack-bar-amber-end: #ecaf3d;
+	--stack-bar-amber-border: #f0c05b;
+
+	--stack-bar-silver-start: #e7e9ec;
+	--stack-bar-silver-end: #cfd3d8;
+	--stack-bar-silver-border: #d6dae0;
+
+	--stack-bar-orange-start: #ffb25e;
+	--stack-bar-orange-end: #ef8a29;
+	--stack-bar-orange-border: #f2a14c;
+
+	--stack-bar-green-start: #8ed27f;
+	--stack-bar-green-end: #5ea357;
+	--stack-bar-green-border: #6ab764;
+
+	--stack-bar-cyan-start: #83d3ef;
+	--stack-bar-cyan-end: #2f98be;
+	--stack-bar-cyan-border: #62bad8;
+
+	--stack-bar-violet-start: #8c80e5;
+	--stack-bar-violet-end: #5e52b7;
+	--stack-bar-violet-border: #7a6fd4;
+
+	--stack-bar-pink-start: #e56fc4;
+	--stack-bar-pink-end: #b94795;
+	--stack-bar-pink-border: #ce5fae;
 }
 
 * {

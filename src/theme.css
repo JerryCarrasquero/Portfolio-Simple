@@ -270,4 +270,52 @@ html {
   --mat-sys-focus-state-layer-opacity: 0.12;
   --mat-sys-hover-state-layer-opacity: 0.08;
   --mat-sys-pressed-state-layer-opacity: 0.12;
+
+  /* Portfolio component tokens */
+  --skills-section-glow-left: rgba(47, 130, 172, 0.2);
+  --skills-section-glow-right: rgba(64, 173, 132, 0.2);
+
+  --stack-bar-title-inner-stroke: rgba(255, 255, 255, 0.04);
+  --stack-bar-title-outer-stroke: rgba(0, 0, 0, 0.2);
+
+  --tech-stack-name-color: color-mix(in srgb, var(--color-on-dark) 88%, var(--color-tertiary) 12%);
+  --tech-stack-name-shadow:
+    0 0 8px color-mix(in srgb, currentColor 30%, transparent),
+    0 0 18px color-mix(in srgb, currentColor 16%, transparent);
+  --tech-stack-fallback-border: color-mix(in srgb, currentColor 75%, transparent);
+  --tech-stack-fallback-color: color-mix(in srgb, currentColor 72%, white 16%);
+  --tech-stack-fallback-text-shadow:
+    0 0 8px color-mix(in srgb, currentColor 42%, transparent),
+    0 0 18px color-mix(in srgb, currentColor 24%, transparent);
+  --tech-stack-fallback-box-shadow:
+    0 0 10px color-mix(in srgb, currentColor 22%, transparent),
+    inset 0 0 18px color-mix(in srgb, currentColor 18%, transparent);
+
+  --tech-stack-accent-javascript: #f7df1e;
+  --tech-stack-accent-typescript: #017acb;
+  --tech-stack-accent-html5: #e44d26;
+  --tech-stack-accent-css3: #264de4;
+  --tech-stack-accent-vite: #916bfe;
+  --tech-stack-accent-npm: #cc0000;
+  --tech-stack-accent-angular: #b52e31;
+  --tech-stack-accent-react: #61dafb;
+  --tech-stack-accent-material-ui: #00b0ff;
+  --tech-stack-accent-flutter: #3b8aca;
+  --tech-stack-accent-dart: #0075c9;
+  --tech-stack-accent-react-native: #61dafb;
+  --tech-stack-accent-kotlin: #ac2ef4;
+  --tech-stack-accent-android-studio: #3ddb85;
+  --tech-stack-accent-ionic: #3880ff;
+  --tech-stack-accent-nodejs: #8cc84b;
+  --tech-stack-accent-graphql: #e535ab;
+  --tech-stack-accent-apollo: #512da8;
+  --tech-stack-accent-postgresql: #336791;
+  --tech-stack-accent-firebase: #ffa000;
+  --tech-stack-accent-linux: #161614;
+  --tech-stack-accent-docker: #2496ed;
+  --tech-stack-accent-figma: #a259ff;
+  --tech-stack-accent-copilot: #f97316;
+  --tech-stack-accent-coderabit: #ff570a;
+  --tech-stack-accent-git: #de4c36;
+  --tech-stack-accent-github: #161614;
 }
