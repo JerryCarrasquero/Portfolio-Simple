@@ -1,0 +1,22 @@
+<section class="stack-bar" [attr.aria-label]="title || 'Tech stack group'">
+  <header
+    class="stack-bar__title"
+    [style.--stack-bar-start]="palette.start"
+    [style.--stack-bar-end]="palette.end"
+    [style.--stack-bar-border]="palette.border"
+    [style.--stack-bar-text]="palette.text"
+  >
+    <h3>{{ title }}</h3>
+  </header>
+
+  <div class="stack-bar__content">
+    @for (card of cards; track card.name) {
+      <app-tech-stack-card
+        [name]="card.name"
+        [imageSrc]="card.imageSrc"
+        [alt]="card.alt || card.name"
+        [accentColor]="card.accentColor || 'var(--color-tertiary)'"
+      ></app-tech-stack-card>
+    }
+  </div>
+</section>

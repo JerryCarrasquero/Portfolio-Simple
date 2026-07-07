@@ -21,14 +21,27 @@ export class LandingPageComponent {
   @ViewChild('landingContainer')
   private readonly landingContainer?: ElementRef<HTMLElement>;
 
-  protected isPortfolioRevealed = false;
+  protected hasPortfolioBeenRevealed = false;
+  protected isHeroCompact = false;
 
   protected revealPortfolio(): void {
-    if (this.isPortfolioRevealed) {
+    if (this.hasPortfolioBeenRevealed) {
+      this.isHeroCompact = true;
       return;
     }
 
-    this.isPortfolioRevealed = true;
+    this.hasPortfolioBeenRevealed = true;
+    this.isHeroCompact = true;
+  }
+
+  protected handleScroll(): void {
+    const container = this.landingContainer?.nativeElement;
+
+    if (!container || !this.hasPortfolioBeenRevealed) {
+      return;
+    }
+
+    this.isHeroCompact = container.scrollTop > 8;
   }
 
   protected goToPortfolio(): void {

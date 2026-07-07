@@ -2,25 +2,53 @@
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 2rem;
+  padding: 2.2rem 1.5rem;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
 
 .skills {
-  background: linear-gradient(180deg, var(--color-surface-900) 0%, var(--color-surface-800) 100%);
+  background:
+    radial-gradient(circle at 15% 12%, var(--skills-section-glow-left) 0%, transparent 42%),
+    radial-gradient(circle at 84% 88%, var(--skills-section-glow-right) 0%, transparent 45%),
+    linear-gradient(180deg, var(--color-surface-900) 0%, var(--color-surface-800) 100%);
   color: var(--color-on-dark);
 }
 
 .content {
-  max-width: 760px;
-  text-align: center;
+  width: min(1120px, 100%);
 }
 
 .label {
   color: var(--color-tertiary);
 }
 
-.text {
-  color: color-mix(in srgb, var(--color-secondary) 82%, white 18%);
+.type-section-title {
+  margin-bottom: 1.5rem;
+}
+
+.stack-layout {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.stack-group {
+  width: 100%;
+  grid-column: span var(--stack-span, 12);
+}
+
+@media (max-width: 960px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .stack-layout {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .stack-group {
+    grid-column: auto;
+  }
 }

@@ -1,7 +1,18 @@
 <section id="skills" class="section snap-section skills">
   <div class="content">
     <p class="label type-section-label">Skills</p>
-    <h2 class="type-section-title">Tech Stack</h2>
-    <p class="text type-body">This section is ready for your technologies, tools, and expertise.</p>
+    <h2 class="type-section-title">My Skillset</h2>
+
+    <div class="stack-layout">
+      @for (group of stackGroups; track group.title) {
+        <app-tech-stack-bar
+          class="stack-group"
+          [style.--stack-span]="group.span"
+          [title]="group.title"
+          [palette]="group.palette"
+          [cards]="group.cards"
+        ></app-tech-stack-bar>
+      }
+    </div>
   </div>
 </section>

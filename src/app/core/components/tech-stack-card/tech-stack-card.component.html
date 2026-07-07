@@ -1,0 +1,16 @@
+<div class="tech-card" [style.color]="accentColor">
+  <div class="tech-card__media">
+    @if (imageSrc) {
+      <img
+        class="tech-card__image"
+        [src]="imageSrc"
+        [alt]="alt || name"
+        loading="lazy"
+      />
+    } @else {
+      <span class="tech-card__fallback" aria-hidden="true">SVG</span>
+    }
+  </div>
+
+  <p class="tech-card__name">{{ name }}</p>
+</div>
