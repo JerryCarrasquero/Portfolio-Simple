@@ -2,6 +2,69 @@
   <div class="content">
     <p class="label type-section-label">Projects</p>
     <h2 class="type-section-title">Selected Work</h2>
-    <p class="text type-body">This section is ready for your project cards and case studies.</p>
+
+    <app-folder-tabs class="projects-folder" [tabs]="projectTabs" panelLabel="Project selector tabs">
+      <ng-template let-project="tab">
+        <article class="project-panel" [class.project-panel--no-media]="!hasProjectMedia(project)">
+          @if (hasProjectMedia(project)) {
+            <div class="project-panel__media">
+              @if (hasProjectImage(project)) {
+                <img
+                  class="project-panel__image"
+                  [src]="project.imageSrc"
+                  [alt]="project.title + ' preview image'"
+                  loading="lazy"
+                />
+              }
+
+              @if (hasPlayStoreLink(project)) {
+                <div class="project-panel__media-actions">
+                  <a
+                    mat-flat-button
+                    class="project-panel__playstore-button"
+                    [href]="project.playStoreUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {{ project.playStoreLabel || 'Download from Play Store' }}
+                  </a>
+                </div>
+              }
+            </div>
+          }
+
+          <div class="project-panel__content">
+            <dt>Description</dt>
+            <p class="project-panel__summary type-body">{{ project.summary }}</p>
+
+            <dl class="project-panel__meta">
+              <div>
+                <dt>Public</dt>
+                <dd>{{ project.visibility }}</dd>
+              </div>
+              <div>
+                <dt>Company</dt>
+                <dd>{{ project.company }}</dd>
+              </div>
+            </dl>
+
+            <div class="project-panel__skills">
+              <p class="project-panel__skills-title">Skill Set</p>
+              <div class="project-panel__skills-grid" role="list" aria-label="Project technology stack">
+                @for (skill of project.skills; track skill.id) {
+                  <app-tech-stack-card
+                    role="listitem"
+                    [name]="skill.name"
+                    [imageSrc]="skill.imageSrc || ''"
+                    [alt]="skill.alt || skill.name"
+                    [accentColor]="skill.accentColor || 'var(--mat-sys-primary)'"
+                  ></app-tech-stack-card>
+                }
+              </div>
+            </div>
+          </div>
+        </article>
+      </ng-template>
+    </app-folder-tabs>
   </div>
 </section>

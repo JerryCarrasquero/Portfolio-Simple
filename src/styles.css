@@ -46,6 +46,14 @@
 	--stack-bar-pink-start: #e56fc4;
 	--stack-bar-pink-end: #b94795;
 	--stack-bar-pink-border: #ce5fae;
+
+	--folder-tabs-surface: #f5cf4f;
+	--folder-tabs-surface-active: #e8a90c;
+	--folder-tabs-surface-inner: #f3dd94;
+	--folder-tabs-outline: color-mix(in srgb, #d39b06 78%, var(--mat-sys-outline) 22%);
+	--folder-tabs-text: color-mix(in srgb, var(--mat-sys-on-surface) 84%, #3d2e02 16%);
+	--folder-tabs-shadow: 0 10px 24px color-mix(in srgb, #000 14%, transparent);
+	--folder-tabs-focus-shadow: var(--mat-sys-primary);
 }
 
 * {

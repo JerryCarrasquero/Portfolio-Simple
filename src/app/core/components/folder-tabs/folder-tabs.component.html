@@ -1,0 +1,67 @@
+<div class="folder-tabs" [style.--tab-count]="tabs.length">
+  <div class="folder-tabs__strip-shell">
+    <button
+      class="folder-tabs__scroll-button folder-tabs__scroll-button--left"
+      type="button"
+      aria-label="Scroll tabs left"
+      (click)="scrollTabs('left')"
+    >
+      <span aria-hidden="true">‹</span>
+    </button>
+
+    <div
+      #stripScroller
+      class="folder-tabs__strip"
+      role="tablist"
+      [attr.aria-label]="panelLabel"
+    >
+      @for (tab of tabs; track trackTab($index, tab)) {
+        <button
+          #tabButton
+          class="folder-tabs__tab"
+          type="button"
+          role="tab"
+          [id]="'folder-tab-' + $index"
+          [class.is-active]="$index === activeIndex"
+          [attr.aria-selected]="$index === activeIndex"
+          [attr.aria-controls]="'folder-panel-' + $index"
+          [attr.tabindex]="$index === activeIndex ? 0 : -1"
+          [attr.title]="tab.summary || tab.title"
+          (click)="selectTab($index)"
+        >
+          <span class="folder-tabs__tab-title">{{ tab.title }}</span>
+        </button>
+      }
+    </div>
+
+    <button
+      class="folder-tabs__scroll-button folder-tabs__scroll-button--right"
+      type="button"
+      aria-label="Scroll tabs right"
+      (click)="scrollTabs('right')"
+    >
+      <span aria-hidden="true">›</span>
+    </button>
+  </div>
+
+  <div class="folder-tabs__panel-shell" [style.minHeight]="panelHeight">
+    @if (activeTab; as tab) {
+      <section
+        #activePanel
+        class="folder-tabs__panel"
+        role="tabpanel"
+        [id]="'folder-panel-' + activeIndex"
+        [attr.aria-labelledby]="'folder-tab-' + activeIndex"
+      >
+        @if (tabContentTemplate) {
+          <ng-container
+            [ngTemplateOutlet]="tabContentTemplate"
+            [ngTemplateOutletContext]="{ $implicit: tab, tab: tab, index: activeIndex }"
+          ></ng-container>
+        } @else {
+          <p class="folder-tabs__default-content">{{ tab.title }}</p>
+        }
+      </section>
+    }
+  </div>
+</div>
