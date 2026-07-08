@@ -34,51 +34,20 @@
 
 .project-panel {
   display: grid;
-  grid-template-columns: minmax(17rem, 1.1fr) minmax(18rem, 1fr);
-  gap: clamp(1rem, 2.5vw, 1.8rem);
-  height: 100%;
-  min-height: 0;
-  overflow: hidden;
-}
-
-.project-panel--no-media {
   grid-template-columns: minmax(0, 1fr);
-  min-height: 0;
-}
-
-.project-panel__media {
-  position: relative;
-  display: grid;
-  place-items: center;
-  border-radius: 0.9rem;
-  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 72%, transparent);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, white 52%, transparent) 0%, transparent 28%),
-    color-mix(in srgb, var(--mat-sys-surface-container-highest) 88%, #eef1f6 12%);
-  min-height: 0;
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+  align-items: start;
   height: 100%;
-  overflow: hidden;
-  box-shadow: 0 4px 14px color-mix(in srgb, #000 10%, transparent);
-}
-
-.project-panel__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-panel__media-actions {
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .project-panel__playstore-button {
-  pointer-events: auto;
+  display: inline-flex;
+  justify-content: center;
+  width: fit-content;
+  padding-inline: 1rem;
   min-height: 2.5rem;
   border-radius: 999px;
   font-weight: 600;
@@ -86,26 +55,22 @@
   box-shadow: 0 6px 14px color-mix(in srgb, #000 18%, transparent);
 }
 
-.project-panel--no-media .project-panel__media {
-  background:
-    radial-gradient(circle at 84% 18%, color-mix(in srgb, var(--mat-sys-primary-container) 45%, transparent), transparent 50%),
-    color-mix(in srgb, var(--mat-sys-surface-container-highest) 88%, #eef1f6 12%);
-}
-
-.project-panel--no-media .project-panel__media-actions {
-  inset: 0;
-  align-items: center;
-}
-
 .project-panel__content {
   display: grid;
   align-content: start;
   align-self: stretch;
+  width: min(52rem, 100%);
+  margin-inline: auto;
   height: 100%;
   min-height: 0;
   gap: 1.25rem;
   color: var(--mat-sys-on-surface);
-  overflow: auto;
+  overflow: visible;
+}
+
+.project-panel__description-actions {
+  display: flex;
+  justify-content: center;
 }
 
 .project-panel__summary {
@@ -142,10 +107,23 @@
   font-weight: 700;
 }
 
+.project-panel__skills-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.75rem;
+  margin-bottom: 0.45rem;
+}
+
+.project-panel__skills-header .project-panel__skills-title {
+  margin: 0;
+}
+
 .project-panel__skills-grid {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  justify-content: center;
   gap: 0.65rem;
   --tech-stack-item-width: clamp(5.8rem, 16vw, 6.4rem);
 }
@@ -159,11 +137,6 @@
     grid-template-columns: 1fr;
     min-height: 0;
   }
-
-  .project-panel__media {
-    min-height: 12rem;
-    height: auto;
-  }
 }
 
 @media (max-width: 860px) {
@@ -171,10 +144,8 @@
     padding: 1.8rem 0.75rem;
   }
 
-  .project-panel__media-actions {
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
+  .project-panel__skills-header {
+    align-items: flex-start;
   }
 
   .project-panel__skills-grid {
@@ -187,8 +158,8 @@
     width: calc(100% - 1rem);
   }
 
-  .project-panel__media {
-    min-height: 10rem;
+  .project-panel__playstore-button {
+    width: fit-content;
   }
 
   .project-panel__skills-grid {

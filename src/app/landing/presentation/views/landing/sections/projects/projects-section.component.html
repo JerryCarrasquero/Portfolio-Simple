@@ -5,37 +5,24 @@
 
     <app-folder-tabs class="projects-folder" [tabs]="projectTabs" panelLabel="Project selector tabs">
       <ng-template let-project="tab">
-        <article class="project-panel" [class.project-panel--no-media]="!hasProjectMedia(project)">
-          @if (hasProjectMedia(project)) {
-            <div class="project-panel__media">
-              @if (hasProjectImage(project)) {
-                <img
-                  class="project-panel__image"
-                  [src]="project.imageSrc"
-                  [alt]="project.title + ' preview image'"
-                  loading="lazy"
-                />
-              }
-
-              @if (hasPlayStoreLink(project)) {
-                <div class="project-panel__media-actions">
-                  <a
-                    mat-flat-button
-                    class="project-panel__playstore-button"
-                    [href]="project.playStoreUrl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {{ project.playStoreLabel || 'Download from Play Store' }}
-                  </a>
-                </div>
-              }
-            </div>
-          }
-
+        <article class="project-panel">
           <div class="project-panel__content">
-            <dt>Description</dt>
+            <p class="project-panel__skills-title">Description</p>
             <p class="project-panel__summary type-body">{{ project.summary }}</p>
+
+            @if (hasPlayStoreLink(project)) {
+              <div class="project-panel__description-actions">
+                <a
+                  mat-flat-button
+                  class="project-panel__playstore-button"
+                  [href]="project.playStoreUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ project.playStoreLabel || 'Download from Play Store' }}
+                </a>
+              </div>
+            }
 
             <dl class="project-panel__meta">
               <div>
@@ -49,7 +36,9 @@
             </dl>
 
             <div class="project-panel__skills">
-              <p class="project-panel__skills-title">Skill Set</p>
+              <div class="project-panel__skills-header">
+                <p class="project-panel__skills-title">Skill Set</p>
+              </div>
               <div class="project-panel__skills-grid" role="list" aria-label="Project technology stack">
                 @for (skill of project.skills; track skill.id) {
                   <app-tech-stack-card

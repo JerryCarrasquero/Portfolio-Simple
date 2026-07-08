@@ -12,7 +12,7 @@
   --panel-bg: color-mix(in srgb, var(--mat-sys-surface-container-high) 92%, white 8%);
   --panel-border: color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent);
   --panel-shadow: 0 10px 22px color-mix(in srgb, #000 13%, transparent);
-  --folder-panel-height: 32rem;
+  --folder-panel-height: 36rem;
 
   width: 100%;
   color: var(--mat-sys-on-surface);
@@ -115,7 +115,6 @@
   box-shadow: var(--panel-shadow);
   height: var(--folder-panel-height);
   min-height: var(--folder-panel-height);
-  max-height: var(--folder-panel-height);
   overflow: hidden;
 }
 
@@ -161,13 +160,11 @@
   .folder-tabs__panel-shell {
     margin-top: 0.65rem;
     border-radius: 0.75rem;
-    height: 28rem;
-    min-height: 28rem;
-    max-height: 28rem;
+    height: 31rem;
+    min-height: 31rem;
   }
 
   .folder-tabs__panel {
-    min-height: 0;
     border-radius: 0.6rem;
   }
 }

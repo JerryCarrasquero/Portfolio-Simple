@@ -17,7 +17,6 @@ interface ProjectFolderTab extends FolderTabItem {
   summary: string;
   visibility: string;
   company: string;
-  imageSrc?: string | null;
   playStoreUrl?: string | null;
   playStoreLabel?: string;
   skills: ReadonlyArray<TechStackCardEntity>;
@@ -126,13 +125,5 @@ export class ProjectsSectionComponent {
 
   protected hasPlayStoreLink(project: ProjectFolderTab): boolean {
     return typeof project.playStoreUrl === 'string' && project.playStoreUrl.trim().length > 0;
-  }
-
-  protected hasProjectMedia(project: ProjectFolderTab): boolean {
-    return this.hasProjectImage(project) || this.hasPlayStoreLink(project);
-  }
-
-  protected hasProjectImage(project: ProjectFolderTab): boolean {
-    return typeof project.imageSrc === 'string' && project.imageSrc.trim().length > 0;
   }
 }
