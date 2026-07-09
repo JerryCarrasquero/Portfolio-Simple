@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './about-me-section.component.html',
   styleUrl: './about-me-section.component.css',
 })
-export class AboutMeSectionComponent {}
+export class AboutMeSectionComponent {
+    profileImagePath = 'asset/profile/profile.png';
+
+}

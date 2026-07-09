@@ -28,7 +28,10 @@ export type TechStackCardId =
   | 'codeRabbit'
   | 'git'
   | 'github'
-  | 'ciCd';
+  | 'ciCd'
+  | 'gmail'
+  | 'linkedin'
+  ;
 
 export interface TechStackCardEntity {
   id: TechStackCardId;

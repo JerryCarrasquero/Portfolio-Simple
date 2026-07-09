@@ -50,7 +50,7 @@
 
 .project-panel__description-actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .project-panel__summary {
@@ -103,7 +103,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.65rem;
   --tech-stack-item-width: clamp(5.8rem, 16vw, 6.4rem);
 }

@@ -1,7 +1,4 @@
-import {
-  TechStackCardEntity,
-  TechStackCardId,
-} from '../../domain/entities/tech-stack-card.entity';
+import { TechStackCardEntity, TechStackCardId } from '../../domain/entities/tech-stack-card.entity';
 
 const stackLogoBasePath = 'asset/stack_logo';
 
@@ -198,10 +195,26 @@ export const TECH_STACK_CARD_CATALOG: Readonly<Record<TechStackCardId, TechStack
     imageSrc: stackLogo('GitHub.svg'),
     accentColor: 'var(--tech-stack-accent-github)',
   },
+  gmail: {
+    id: 'gmail',
+    name: 'Gmail',
+    imageSrc: stackLogo('gmail.svg'),
+    accentColor: 'var(--tech-stack-accent-gmail)',
+  },
+  linkedin: {
+    id: 'linkedin',
+    name: 'LinkedIn',
+    imageSrc: stackLogo('Linkedin.svg'),
+    accentColor: 'var(--tech-stack-accent-linkedin)',
+  },
 };
 
 export function resolveTechStackCards(
   ids: readonly TechStackCardId[],
 ): ReadonlyArray<TechStackCardEntity> {
   return ids.map((id) => TECH_STACK_CARD_CATALOG[id]);
+}
+
+export function resolveSingleTechStackCard(id: TechStackCardId): TechStackCardEntity {
+  return TECH_STACK_CARD_CATALOG[id];
 }
