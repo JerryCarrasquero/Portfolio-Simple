@@ -126,7 +126,7 @@ export const TECH_STACK_CARD_CATALOG: Readonly<Record<TechStackCardId, TechStack
   },
   apollo: {
     id: 'apollo',
-    name: 'Apollo GraphQL / Apollo',
+    name: 'Apollo',
     imageSrc: stackLogo('Apollo Graphql.svg'),
     accentColor: 'var(--tech-stack-accent-apollo)',
   },

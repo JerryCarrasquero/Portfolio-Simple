@@ -5,54 +5,7 @@
 
     <app-folder-tabs class="projects-folder" [tabs]="projectTabs" panelLabel="Project selector tabs">
       <ng-template let-project="tab">
-        <article class="project-panel">
-          <div class="project-panel__content">
-            <p class="project-panel__skills-title">Description</p>
-            <p class="project-panel__summary type-body">{{ project.summary }}</p>
-
-            @if (hasPlayStoreLink(project)) {
-              <div class="project-panel__description-actions">
-                <a
-                  mat-flat-button
-                  class="project-panel__playstore-button"
-                  [href]="project.playStoreUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {{ project.playStoreLabel || 'Download from Play Store' }}
-                </a>
-              </div>
-            }
-
-            <dl class="project-panel__meta">
-              <div>
-                <dt>Public</dt>
-                <dd>{{ project.visibility }}</dd>
-              </div>
-              <div>
-                <dt>Company</dt>
-                <dd>{{ project.company }}</dd>
-              </div>
-            </dl>
-
-            <div class="project-panel__skills">
-              <div class="project-panel__skills-header">
-                <p class="project-panel__skills-title">Skill Set</p>
-              </div>
-              <div class="project-panel__skills-grid" role="list" aria-label="Project technology stack">
-                @for (skill of project.skills; track skill.id) {
-                  <app-tech-stack-card
-                    role="listitem"
-                    [name]="skill.name"
-                    [imageSrc]="skill.imageSrc || ''"
-                    [alt]="skill.alt || skill.name"
-                    [accentColor]="skill.accentColor || 'var(--mat-sys-primary)'"
-                  ></app-tech-stack-card>
-                }
-              </div>
-            </div>
-          </div>
-        </article>
+        <app-project-panel [project]="project"></app-project-panel>
       </ng-template>
     </app-folder-tabs>
   </div>

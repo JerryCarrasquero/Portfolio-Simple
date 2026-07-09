@@ -1,34 +1,46 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
 import {
   FolderTabItem,
   FolderTabsComponent,
 } from '../../../../../../core/components/folder-tabs/folder-tabs.component';
 import {
-  TechStackCardComponent,
-} from '../../../../../../core/components/tech-stack-card/tech-stack-card.component';
+  ProjectPanelComponent,
+  ProjectPanelViewModel,
+} from './components/project-panel/project-panel.component';
 import {
   TechStackCardEntity,
   TechStackCardId,
 } from '../../../../../domain/entities/tech-stack-card.entity';
 import { resolveTechStackCards } from '../../../../../infrastructure/repositories/tech-stack-card.catalog';
 
-interface ProjectFolderTab extends FolderTabItem {
-  summary: string;
-  visibility: string;
-  company: string;
-  playStoreUrl?: string | null;
-  playStoreLabel?: string;
-  skills: ReadonlyArray<TechStackCardEntity>;
-}
+interface ProjectFolderTab extends Omit<FolderTabItem, 'summary'>, ProjectPanelViewModel {}
 
 @Component({
   selector: 'app-projects-section',
-  imports: [FolderTabsComponent, TechStackCardComponent, MatButtonModule],
+  imports: [FolderTabsComponent, ProjectPanelComponent],
   templateUrl: './projects-section.component.html',
   styleUrl: './projects-section.component.css',
 })
 export class ProjectsSectionComponent {
+  private static readonly appProofBasePath = 'asset/app_proof';
+
+  private static readonly appProofFiles: ReadonlyArray<string> = [
+    'Asistencia.png',
+    'Bitacora.png',
+    'control_de_accesso.png',
+    'quaccess.png',
+    'Quini3l.png',
+    'Rondinero.png',
+    'Supervision.png',
+  ];
+
+  private readonly appProofByKey = this.buildProofIndex(ProjectsSectionComponent.appProofFiles);
+
+  private readonly appProofAliases: Readonly<Record<string, string>> = {
+    asistenciasistgo: 'asistencia',
+    controldeaccesosistgo: 'controldeaccesso',
+  };
+
   private skillCards(ids: readonly TechStackCardId[]): ReadonlyArray<TechStackCardEntity> {
     return resolveTechStackCards(ids);
   }
@@ -121,9 +133,34 @@ export class ProjectsSectionComponent {
       playStoreLabel: 'Download from Play Store',
       skills: this.skillCards(['kotlin', 'android']),
     },
-  ];
+  ].map((project) => ({
+    ...project,
+    proofImageSrc: this.resolveAppProofImage(project.title),
+    proofImageAlt: `${project.title} app screenshot`,
+  }));
 
-  protected hasPlayStoreLink(project: ProjectFolderTab): boolean {
-    return typeof project.playStoreUrl === 'string' && project.playStoreUrl.trim().length > 0;
+  private resolveAppProofImage(projectTitle: string): string | null {
+    const normalizedTitle = this.normalizeKey(projectTitle);
+    const lookupKey = this.appProofAliases[normalizedTitle] ?? normalizedTitle;
+    const imageFile = this.appProofByKey[lookupKey];
+
+    return imageFile ? `${ProjectsSectionComponent.appProofBasePath}/${imageFile}` : null;
+  }
+
+  private buildProofIndex(files: ReadonlyArray<string>): Readonly<Record<string, string>> {
+    return files.reduce<Record<string, string>>((catalog, fileName) => {
+      const fileWithoutExtension = fileName.replace(/\.[^.]+$/, '');
+      const key = this.normalizeKey(fileWithoutExtension);
+      catalog[key] = fileName;
+      return catalog;
+    }, {});
+  }
+
+  private normalizeKey(value: string): string {
+    return value
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]/g, '');
   }
 }

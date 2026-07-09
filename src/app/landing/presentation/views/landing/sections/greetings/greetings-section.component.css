@@ -9,7 +9,7 @@
 
 .greetings {
   background-image:
-    linear-gradient(to bottom, rgb(8 13 31 / 28%), rgb(8 13 31 / 74%)),
+    linear-gradient(180deg, rgb(2 5 16 / 76%) 0%, rgb(6 16 40 / 64%) 48%, rgb(10 26 60 / 54%) 100%),
     var(--greetings-background-image);
   background-position: center;
   background-size: cover;
