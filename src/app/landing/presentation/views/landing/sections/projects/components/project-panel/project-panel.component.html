@@ -1,0 +1,62 @@
+<article class="project-panel" [class.project-panel--with-image]="hasImage">
+  
+  @if (hasImage) {
+    <figure class="project-panel__proof">
+      <img
+        class="project-panel__proof-image"
+        [src]="project.proofImageSrc"
+        [alt]="project.proofImageAlt || 'Project screenshot'"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  }
+  
+  <div class="project-panel__content">
+    <p class="project-panel__skills-title">Description</p>
+    <p class="project-panel__summary type-body">{{ project.summary }}</p>
+
+    @if (hasPlayStoreLink) {
+      <div class="project-panel__description-actions">
+        <a
+          mat-flat-button
+          class="project-panel__playstore-button"
+          [href]="project.playStoreUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ project.playStoreLabel || 'Download from Play Store' }}
+        </a>
+      </div>
+    }
+
+    <dl class="project-panel__meta">
+      <div>
+        <dt>Public</dt>
+        <dd>{{ project.visibility }}</dd>
+      </div>
+      <div>
+        <dt>Company</dt>
+        <dd>{{ project.company }}</dd>
+      </div>
+    </dl>
+
+    <div class="project-panel__skills">
+      <div class="project-panel__skills-header">
+        <p class="project-panel__skills-title">Skill Set</p>
+      </div>
+      <div class="project-panel__skills-grid" role="list" aria-label="Project technology stack">
+        @for (skill of project.skills; track skill.id) {
+          <app-tech-stack-card
+            role="listitem"
+            [name]="skill.name"
+            [imageSrc]="skill.imageSrc || ''"
+            [alt]="skill.alt || skill.name"
+            [accentColor]="skill.accentColor || 'var(--mat-sys-primary)'"
+          ></app-tech-stack-card>
+        }
+      </div>
+    </div>
+  </div>
+
+</article>

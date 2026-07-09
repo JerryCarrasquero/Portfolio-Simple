@@ -1,5 +1,5 @@
 .section {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   padding: 2.2rem 1.5rem;
@@ -9,9 +9,9 @@
 
 .skills {
   background:
-    radial-gradient(circle at 15% 12%, var(--skills-section-glow-left) 0%, transparent 42%),
-    radial-gradient(circle at 84% 88%, var(--skills-section-glow-right) 0%, transparent 45%),
-    linear-gradient(180deg, var(--color-surface-900) 0%, var(--color-surface-800) 100%);
+    radial-gradient(circle at 15% 12%, rgb(89 155 242 / 22%) 0%, transparent 42%),
+    radial-gradient(circle at 84% 88%, rgb(116 178 255 / 20%) 0%, transparent 45%),
+    linear-gradient(180deg, #081631 0%, #12396f 56%, #235390 100%);
   color: var(--color-on-dark);
 }
 

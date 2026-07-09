@@ -1,5 +1,5 @@
 .section {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   padding: 2rem;
@@ -8,7 +8,10 @@
 }
 
 .about-me {
-  background: linear-gradient(160deg, var(--color-surface-800) 0%, var(--color-surface-700) 100%);
+  background:
+    radial-gradient(circle at 14% 16%, rgb(39 86 166 / 20%) 0%, transparent 44%),
+    radial-gradient(circle at 82% 82%, rgb(56 118 204 / 16%) 0%, transparent 47%),
+    linear-gradient(160deg, #050a1b 0%, #0a1f4b 52%, #15356f 100%);
   color: var(--color-on-dark);
 }
 

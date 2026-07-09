@@ -18,39 +18,37 @@ import { SkillsSectionComponent } from './sections/skills/skills-section.compone
   styleUrl: './landing-page.component.css',
 })
 export class LandingPageComponent {
+  private static readonly heroCompactTransitionMs = 450;
+
   @ViewChild('landingContainer')
   private readonly landingContainer?: ElementRef<HTMLElement>;
 
-  protected hasPortfolioBeenRevealed = false;
   protected isHeroCompact = false;
-
-  protected revealPortfolio(): void {
-    if (this.hasPortfolioBeenRevealed) {
-      this.isHeroCompact = true;
-      return;
-    }
-
-    this.hasPortfolioBeenRevealed = true;
-    this.isHeroCompact = true;
-  }
 
   protected handleScroll(): void {
     const container = this.landingContainer?.nativeElement;
 
-    if (!container || !this.hasPortfolioBeenRevealed) {
-      return;
-    }
-
-    this.isHeroCompact = container.scrollTop > 8;
+    this.isHeroCompact = !!container && container.scrollTop > 8;
   }
 
   protected goToPortfolio(): void {
-    this.revealPortfolio();
+    if (this.isHeroCompact) {
+      this.scrollToSection('about-me');
+      return;
+    }
 
+    this.isHeroCompact = true;
+
+    window.setTimeout(() => {
+      this.scrollToSection('about-me');
+    }, LandingPageComponent.heroCompactTransitionMs);
+  }
+
+  private scrollToSection(sectionId: string): void {
     queueMicrotask(() => {
       const container = this.landingContainer?.nativeElement;
-      const aboutMeSection = container?.querySelector<HTMLElement>('#about-me');
-      aboutMeSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const section = container?.querySelector<HTMLElement>(`#${sectionId}`);
+      section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 }

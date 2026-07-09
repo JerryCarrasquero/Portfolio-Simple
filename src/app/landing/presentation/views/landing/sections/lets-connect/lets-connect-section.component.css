@@ -1,5 +1,5 @@
 .section {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   padding: 2rem;
@@ -8,7 +8,10 @@
 }
 
 .lets-connect {
-  background: linear-gradient(170deg, var(--color-surface-900) 0%, var(--color-primary) 100%);
+  background:
+    radial-gradient(circle at 20% 18%, rgb(170 214 255 / 25%) 0%, transparent 46%),
+    radial-gradient(circle at 86% 82%, rgb(147 205 255 / 21%) 0%, transparent 48%),
+    linear-gradient(170deg, #224d80 0%, #4f89c0 58%, #78acd8 100%);
   color: var(--color-on-dark);
 }
 

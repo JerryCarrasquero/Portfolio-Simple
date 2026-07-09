@@ -2,6 +2,11 @@
   <div class="content">
     <p class="label type-section-label">Projects</p>
     <h2 class="type-section-title">Selected Work</h2>
-    <p class="text type-body">This section is ready for your project cards and case studies.</p>
+
+    <app-folder-tabs class="projects-folder" [tabs]="projectTabs" panelLabel="Project selector tabs">
+      <ng-template let-project="tab">
+        <app-project-panel [project]="project"></app-project-panel>
+      </ng-template>
+    </app-folder-tabs>
   </div>
 </section>

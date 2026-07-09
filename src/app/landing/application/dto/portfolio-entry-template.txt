@@ -1,0 +1,54 @@
+# Portfolio Data Template (one block per project)
+# Notes:
+# - Keep keys exactly as written.
+# - Use one project block for each tab entry.
+# - skills.ids must use IDs from tech-stack-card.entity.ts.
+# - Leave image.src empty if there is no image.
+# - Leave playStore.url empty if app is not in Play Store.
+
+[PROJECT]
+id: project-001
+title: Portfolio Redesign
+summary: A short 1-2 sentence case-study summary.
+visibility: Public
+company: Personal / Freelance
+
+image.src:
+image.alt: Portfolio Redesign preview image
+
+playStore.url: https://play.google.com/store/apps/details?id=com.example.app
+playStore.label: Download from Play Store
+
+skills.ids: angular, typescript, css3, figma
+
+links.website: https://example.com
+links.github: https://github.com/your-org/your-repo
+
+# Optional tags
+category: Web App
+status: Production
+year: 2026
+[/PROJECT]
+
+[PROJECT]
+id: project-002
+title:
+summary:
+visibility:
+company:
+
+image.src:
+image.alt:
+
+playStore.url:
+playStore.label:
+
+skills.ids:
+
+links.website:
+links.github:
+
+category:
+status:
+year:
+[/PROJECT]
