@@ -14,7 +14,13 @@
     linear-gradient(160deg, #050a1b 0%, #0a1f4b 52%, #15356f 100%);
   color: var(--color-on-dark);
 }
-
+.image-profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
 .content {
   max-width: 760px;
   text-align: center;
@@ -25,5 +31,14 @@
 }
 
 .text {
+  text-align: justify;
+  text-justify: inter-word;
   color: color-mix(in srgb, var(--color-secondary) 80%, white 20%);
+}
+
+.neon-glow {
+  /* Layering shadows creates the intense inner core and a soft outer blur */
+  filter: drop-shadow(0 0 5px var(--color-primary))   /* Bright, sharp inner glow */
+          drop-shadow(0 0 10px var(--color-primary))  /* Medium vibrant glow */
+          drop-shadow(0 0 15px var(--color-primary)); /* Deep, soft background glow */
 }
