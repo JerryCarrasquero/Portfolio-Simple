@@ -1,17 +1,16 @@
 <article class="project-panel" [class.project-panel--with-image]="hasImage">
-  
   @if (hasImage) {
     <figure class="project-panel__proof">
-      <img
-        class="project-panel__proof-image"
+      <app-loading
+        imageClass="project-panel__proof-image"
         [src]="project.proofImageSrc"
         [alt]="project.proofImageAlt || 'Project screenshot'"
         loading="lazy"
         decoding="async"
-      />
+      ></app-loading>
     </figure>
   }
-  
+
   <div class="project-panel__content">
     <p class="project-panel__skills-title">Description</p>
     <p class="project-panel__summary type-body">{{ project.summary }}</p>
@@ -58,5 +57,4 @@
       </div>
     </div>
   </div>
-
 </article>

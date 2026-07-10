@@ -1,49 +1,8 @@
-.section {
-  width: 100%;
-}
 :host {
-  display: flex;
-  width: 100%;
-  flex-grow: 1;
-}
-.lets-connect {
-  background:
-    radial-gradient(circle at 20% 18%, rgb(170 214 255 / 25%) 0%, transparent 46%),
-    radial-gradient(circle at 86% 82%, rgb(147 205 255 / 21%) 0%, transparent 48%),
-    linear-gradient(170deg, #224d80 0%, #4f89c0 58%, #78acd8 100%);
-  color: var(--color-on-dark);
-}
-
-.content {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  place-items: center;
-  text-align: center;
-}
-
-.label {
-  color: var(--color-tertiary);
-}
-
-.text {
-  color: color-mix(in srgb, var(--color-secondary) 82%, white 18%);
-}
-
-.cards-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-CSS :host {
   display: block;
   width: 100%;
+  flex-shrink: 0; /* Prevents the flex container from squishing the footer vertically */
 }
-
 .portfolio-footer {
   position: relative;
   /* Use a deep, rich color that matches your project theme rather than flat black */
@@ -194,28 +153,9 @@ CSS :host {
 }
 .footer-vector-shape {
   width: 100%;
-
-  /* 1. Define the BASE height of your houses using your fluid clamp */
   height: clamp(40px, 6vw, 74px);
-  display: block;
-  background-color: var(--mat-sys-surface-container-low, #0b0f19);
-
-  /* 2. THE RIGHT WAY: Apply a fluid 25px to 50px overlap safety buffer.
-     This expands the container size dynamically so the asset never cuts off. */
-  padding-bottom: clamp(25px, 3.5vw, 50px);
-
-  /* 3. Pull the dark footer wrapper upward by that exact same fluid amount 
-     so it perfectly absorbs the extra padding space */
-  margin-bottom: calc(clamp(25px, 3.5vw, 50px) * -1);
-
-  /* Reset your transform completely to avoid painting gaps */
-  transform: none;
-  -webkit-mask-image: url('/asset/footer/footer_image.svg');
-  mask-image: url('/asset/footer/footer_image.svg');
-  -webkit-mask-repeat: repeat-x;
-  mask-repeat: repeat-x;
-
-  /* Keep the mask snapped to the top or stretched cleanly */
-  -webkit-mask-size: auto 100%;
-  mask-size: auto 100%;
+  
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background-color: var(--mat-sys-surface-container-low, #0b0f19);;
 }

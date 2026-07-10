@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AboutMeSectionComponent {
     profileImagePath = 'asset/profile/profile.png';
-
 }

@@ -4,6 +4,7 @@ import { GreetingsSectionComponent } from './sections/greetings/greetings-sectio
 import { LetsConnectSectionComponent } from './sections/lets-connect/lets-connect-section.component';
 import { ProjectsSectionComponent } from './sections/projects/projects-section.component';
 import { SkillsSectionComponent } from './sections/skills/skills-section.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -13,6 +14,7 @@ import { SkillsSectionComponent } from './sections/skills/skills-section.compone
     SkillsSectionComponent,
     ProjectsSectionComponent,
     LetsConnectSectionComponent,
+    FooterComponent
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css',

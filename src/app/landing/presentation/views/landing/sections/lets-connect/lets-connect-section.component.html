@@ -2,26 +2,26 @@
   <div class="content">
     <p class="label type-section-label">Let's Connect</p>
     <h2 class="type-section-title">Contact me on my social media!</h2>
-    <div class="cards-container" aria-label="Social media links"> 
-        <a href="https://github.com/JerryCarrasquero">
-          <app-tech-stack-card
-            role="listitem"
-            [name]="githubCard.name"
-            [imageSrc]="githubCard.imageSrc || ''"
-            [alt]="githubCard.alt || githubCard.name"
+    <div class="cards-container" aria-label="Social media links">
+      <a href="https://github.com/JerryCarrasquero">
+        <app-tech-stack-card
+          role="listitem"
+          [name]="githubCard.name"
+          [imageSrc]="githubCard.imageSrc || ''"
+          [alt]="githubCard.alt || githubCard.name"
           [accentColor]="githubCard.accentColor || 'var(--mat-sys-primary)'"
         ></app-tech-stack-card>
-        </a>
-        <a href="mailto:carrasquerojerry@gmail.com">
+      </a>
+      <a href="mailto:carrasquerojerry@gmail.com">
         <app-tech-stack-card
           role="listitem"
           [name]="gmailCard.name"
           [imageSrc]="gmailCard.imageSrc || ''"
           [alt]="gmailCard.alt || gmailCard.name"
-          [accentColor]="gmailCard.accentColor || 'var(--mat-sys-primary)'" 
+          [accentColor]="gmailCard.accentColor || 'var(--mat-sys-primary)'"
         ></app-tech-stack-card>
-        </a>
-        <a href="https://www.linkedin.com/in/jerry-carrasquero">    
+      </a>
+      <a href="https://www.linkedin.com/in/jerry-carrasquero">
         <app-tech-stack-card
           role="listitem"
           [name]="linkedinCard.name"
@@ -29,7 +29,9 @@
           [alt]="linkedinCard.alt || linkedinCard.name"
           [accentColor]="linkedinCard.accentColor || 'var(--mat-sys-primary)'"
         ></app-tech-stack-card>
-        </a>
+      </a>
     </div>
+    
+  <div class="footer-vector-shape"></div>
   </div>
 </section>
