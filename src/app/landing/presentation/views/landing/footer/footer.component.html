@@ -1,0 +1,27 @@
+<footer>
+  <div class="portfolio-footer">
+    <div class="footer-background-wrapper">
+      <div class="footer-container">
+        <!-- Call To Action Block -->
+        <div class="footer-cta">
+          @if (isAvailableForHire) {
+            <div class="availability-badge">
+              <span class="pulse-dot"></span> Available for new opportunities
+            </div>
+          }
+          <h2>Intrigued by my work?</h2>
+          <p>Let's collaborate on your next digital product.</p>
+          <a [href]="'mailto:' + email" class="email-link">{{ email }}</a>
+        </div>
+        <!-- Social & Copyright Row -->
+        <div class="footer-bottom">
+          <p class="copyright">Jerry Carrasquero &copy; {{ currentYear }}</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/jerry-carrasquero" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/JerryCarrasquero" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

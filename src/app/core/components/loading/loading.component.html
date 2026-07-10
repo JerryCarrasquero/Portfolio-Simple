@@ -1,0 +1,16 @@
+@if (isLoading) {
+  <div class="image-placeholder" aria-hidden="true">
+    <div class="loading-spinner"></div>
+  </div>
+}
+
+<!-- The [hidden] attribute cleanly manages visibility without altering layout display types -->
+<img
+  [class]="imageClass"
+  [src]="src"
+  [alt]="alt"
+  [style.opacity]="isLoading ? 0 : 1"
+  [attr.loading]="loading"
+  [attr.decoding]="decoding"
+  (load)="onImageLoad()"
+/>

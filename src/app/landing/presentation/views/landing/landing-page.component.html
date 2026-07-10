@@ -1,8 +1,4 @@
-<main
-  #landingContainer
-  class="landing-page"
-  (scroll)="handleScroll()"
->
+<main #landingContainer class="landing-page" (scroll)="handleScroll()">
   <app-greetings-section
     [isPortfolioRevealed]="isHeroCompact"
     (goToPortfolioRequested)="goToPortfolio()"
@@ -11,5 +7,8 @@
   <app-about-me-section />
   <app-skills-section />
   <app-projects-section />
-  <app-lets-connect-section />
+  <div class="finalSection">
+    <app-lets-connect-section />
+    <app-footer />
+  </div>
 </main>
