@@ -200,8 +200,8 @@ CSS :host {
   background-color: var(--mat-sys-surface-container-low, #0b0f19);
 
   transform: none;
-  -webkit-mask-image: url('/asset/footer/footer_image.svg');
-  mask-image: url('/asset/footer/footer_image.svg');
+  -webkit-mask-image: url('asset/footer/footer_image.svg');
+  mask-image: url('asset/footer/footer_image.svg');
   -webkit-mask-repeat: repeat-x;
   mask-repeat: repeat-x;
   position: relative;
