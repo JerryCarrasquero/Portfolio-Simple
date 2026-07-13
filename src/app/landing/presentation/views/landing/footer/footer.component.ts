@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   imports: [],
 })
 export class FooterComponent {
-  svgImageSrc = 'assets/footer/footer_image.svg';
+  svgImageSrc = 'asset/footer/footer_image.svg';
   protected currentYear: number = new Date().getFullYear();
   protected email = 'carrasquerojerry@gmail.com';
   protected isAvailableForHire = true; //

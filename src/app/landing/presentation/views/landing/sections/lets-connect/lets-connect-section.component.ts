@@ -13,7 +13,7 @@ export class LetsConnectSectionComponent {
   githubCard: TechStackCardEntity = resolveSingleTechStackCard('github');
   gmailCard: TechStackCardEntity = resolveSingleTechStackCard('gmail');
   linkedinCard: TechStackCardEntity = resolveSingleTechStackCard('linkedin');
-  svgImageSrc = 'assets/footer/footer_image.svg';
+  svgImageSrc = 'asset/footer/footer_image.svg';
   protected currentYear: number = new Date().getFullYear();
   protected email = 'carrasquerojerry@gmail.com';
   protected isAvailableForHire = true; //
